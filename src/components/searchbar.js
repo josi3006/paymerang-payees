@@ -7,7 +7,7 @@ const Searchbar = () => {
 
 
 
-    const msg = "Hello Paymerang!";
+    const msg = "I'm the searchbar!";
 
 
 

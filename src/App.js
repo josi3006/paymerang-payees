@@ -1,5 +1,7 @@
 import './App.css';
+import Payeepage from './components/payeepage';
 import Searchbar from "./components/searchbar.js";
+import Hitlist from './components/searchlist';
 
 function App() {
   return (
@@ -7,6 +9,10 @@ function App() {
      
 
      <Searchbar />
+
+     <Payeepage />
+
+     <Hitlist />
 
     </div>
   );
