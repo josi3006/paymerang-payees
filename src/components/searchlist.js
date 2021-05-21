@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import jsondata from "../jsondata.json";
 
 
 
@@ -8,13 +9,14 @@ const Hitlist = () => {
 
     const [Searchhits, setSearchhits] = useState([]);
 
-    console.log('Here is the list: ' + Searchhits)
+    console.log('search hits: ', Searchhits)
 
     // Functionality to search json data
 
     const setitup = (e) => {
         e.preventDefault();
-        setSearchhits(["foo", "bar", "baz"])
+        setSearchhits(jsondata)
+        console.log('jsondata: ', jsondata);
     }
 
     return (
@@ -35,12 +37,14 @@ const Hitlist = () => {
                         {Searchhits.map((hititem) => {
                             return (
                                 <li key={toString(Date.now()) + hititem}>
-                                    {hititem}
+                                    {hititem.Payee.Name}
                                 </li>)
                         })
                         }
 
                     </ul>
+
+                    
                 </div>
             }
 
@@ -48,7 +52,6 @@ const Hitlist = () => {
 
             <button onClick={setitup}>Set it</button>
 
-            <button onClick={console.log('hits are: ' + Searchhits)}>Log it</button>
 
         </div>
     );
