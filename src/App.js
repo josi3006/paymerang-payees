@@ -13,14 +13,10 @@ function App() {
   return (
 
     <div className="App">
-     
 
-     {(Payee=== "") ? <Payeepage /> : <h1>try to post searchlist</h1>}
+      <Searchbar />
 
-     <Searchbar />
-
-
-     <Hitlist />
+      {(Payee === "") ? <Payeepage /> : <Hitlist />}
 
     </div>
   );
