@@ -8,20 +8,47 @@ const Hitlist = () => {
 
     const [Searchhits, setSearchhits] = useState([]);
 
-// const setitup = (e) => {
-//     e.preventDefault();
-//     setSearchhits(["foo","bar","baz"])
-// }
+    console.log('Here is the list: ' + Searchhits)
+
+    // Functionality to search json data
+
+    const setitup = (e) => {
+        e.preventDefault();
+        setSearchhits(["foo", "bar", "baz"])
+    }
 
     return (
 
         <div>
 
-            { (Searchhits.length === 0) ? <h1>Hello! No hits!</h1> : <h1>here's a list of many hits</h1> }
+            { (Searchhits.length === 0) ?
 
-            { console.log('length is: ' + Searchhits.length)}
+                <div>
+                    <h1>Welcome to the Paymerang payment search page</h1>
+                    <p>Please use the search bar at the top to search all payments</p>
+                </div>
 
-            {/* <button onClick={setitup} /> */}
+                :
+
+                <div>
+                    <ul>
+                        {Searchhits.map((hititem) => {
+                            return (
+                                <li key={toString(Date.now()) + hititem}>
+                                    {hititem}
+                                </li>)
+                        })
+                        }
+
+                    </ul>
+                </div>
+            }
+
+
+
+            <button onClick={setitup}>Set it</button>
+
+            <button onClick={console.log('hits are: ' + Searchhits)}>Log it</button>
 
         </div>
     );
