@@ -1,29 +1,24 @@
 import React, { useState, useEffect } from "react";
-import jsondata from "../jsondata.json";
+// import jsondata from "../jsondata.json";
 
 
 
 
-const Hitlist = () => {
+const Hitlist = (props) => {
 
 
-    const [Searchhits, setSearchhits] = useState([]);
 
-    console.log('search hits: ', Searchhits)
+    console.log('search hits: ', props.Searchhits)
 
     // Functionality to search json data
 
-    const setitup = (e) => {
-        e.preventDefault();
-        setSearchhits(jsondata)
-        console.log('jsondata: ', jsondata);
-    }
+   
 
     return (
 
         <div>
 
-            { (Searchhits.length === 0) ?
+            { (props.Searchhits.length === 0) ?
 
                 <div>
                     <h1>Welcome to the Paymerang payment search page</h1>
@@ -34,7 +29,7 @@ const Hitlist = () => {
 
                 <div>
                     <ul>
-                        {Searchhits.map((hititem) => {
+                        {props.Searchhits.map((hititem) => {
                             return (
                                 <li key={toString(Date.now()) + hititem}>
                                     {hititem.Payee.Name}
@@ -44,13 +39,13 @@ const Hitlist = () => {
 
                     </ul>
 
-                    
+
                 </div>
             }
 
 
 
-            <button onClick={setitup}>Set it</button>
+            {/* <button onClick={setitup}>Set it</button> */}
 
 
         </div>

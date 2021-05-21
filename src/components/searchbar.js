@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
+import jsondata from "../jsondata.json";
 
 
 
 
-const Searchbar = () => {
+const Searchbar = (props) => {
+
+    // const [Searchhits, setSearchhits] = useState([]);
 
 
+    // const setitup = (e) => {
+    //     e.preventDefault();
+    //     props.setSearchhits(jsondata)
+    //     console.log('jsondata: ', jsondata);
+    // }
 
     const msg = "I'm the searchbar!";
 
@@ -13,8 +21,13 @@ const Searchbar = () => {
 
     return (
 
-        <h1>{msg}</h1>
+        <div>
+            <h1>{msg}</h1>
 
+            <button onClick={props.setitup}>Set it</button>
+
+
+        </div>
     );
 }
 
