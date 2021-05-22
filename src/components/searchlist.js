@@ -26,6 +26,7 @@ const Hitlist = (props) => {
 
                 <div>
                     <ul>
+                        <li>Payee Payment Submission Date</li>
                         {props.Searchhits.map((hititem) => {
 
                             let PANarray = (hititem.Payment.PAN.toString()).split("");
