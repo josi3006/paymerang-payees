@@ -8,8 +8,6 @@ const Hitlist = (props) => {
 
 
 
-    console.log('search hits: ', props.Searchhits)
-
     // Functionality to search json data
 
    
@@ -45,7 +43,6 @@ const Hitlist = (props) => {
 
 
 
-            {/* <button onClick={setitup}>Set it</button> */}
 
 
         </div>

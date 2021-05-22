@@ -6,25 +6,29 @@ import jsondata from "../jsondata.json";
 
 const Searchbar = (props) => {
 
-    // const [Searchhits, setSearchhits] = useState([]);
-
-
-    // const setitup = (e) => {
-    //     e.preventDefault();
-    //     props.setSearchhits(jsondata)
-    //     console.log('jsondata: ', jsondata);
-    // }
-
-    const msg = "I'm the searchbar!";
-
+    const handlechange = (e) => {
+        const { value } = e.target;
+        props.setSearchword(value);
+    }
 
 
     return (
 
         <div>
-            <h1>{msg}</h1>
+
+
+            <input
+                value={props.Searchword}
+                name="searchterm"
+                onChange={handlechange}
+                type="text"
+                placeholder="Search Terms"
+            />
+
 
             <button onClick={props.setitup}>Set it</button>
+
+
 
 
         </div>
