@@ -1,4 +1,5 @@
 import React from "react";
+import "../style.css";
 // import jsondata from "../jsondata.json";
 
 
@@ -9,6 +10,12 @@ const Hitlist = (props) => {
 
 
 
+
+
+    const choosePayee = (e, chosenOne) => {
+        e.preventDefault();
+        props.setPayee(chosenOne);
+    }
 
 
     return (
@@ -25,25 +32,44 @@ const Hitlist = (props) => {
                 :
 
                 <div>
+
+                
+
                     <ul>
                         <li>Payee Payment Submission Date</li>
                         {props.Searchhits.map((hititem) => {
 
                             let PANarray = (hititem.Payment.PAN.toString()).split("");
-                            let lastfour = PANarray.slice(12,16).join('');
+                            let lastfour = PANarray.slice(12, 16).join('');
                             let hiddenPAN = ("************" + lastfour);
 
                             return (
-                                <li key={toString(Date.now()) + hititem}>
-                                    {hititem.Payee.Name}
-                                    {hiddenPAN}
-                                    {hititem.Payee.SubmissionDate}
+
+                                <div className="row" key={toString(Date.now()) + hititem}>
+
+                                    <div className="col linky" onClick={(e) => choosePayee(e, hititem.Payee.name)}>
+                                        {hititem.Payee.Name}
+                                    </div>
+
+                                    <div className="col">
+                                        {hiddenPAN}
+                                    </div>
 
 
-                                </li>)
+                                    <div className="col">
+                                        {hititem.Payee.SubmissionDate}
+                                    </div>
+
+
+                                </div>
+
+
+
+                            )
                         })
                         }
                     </ul>
+
 
 
                 </div>

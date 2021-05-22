@@ -8,7 +8,7 @@ import jsondata from "./jsondata.json";
 function App() {
 
 
-  const [setPayee, Payee] = useState("");
+  const [Payee, setPayee] = useState("");
   const [Searchhits, setSearchhits] = useState([]);
   const [Searchword, setSearchword] = useState("");
 
@@ -25,7 +25,6 @@ function App() {
 
 
 
-
   return (
 
     <div className="App">
@@ -35,10 +34,13 @@ function App() {
         Searchword={Searchword}
         setSearchword={setSearchword} />
 
-      {(Payee === "") ? <Payeepage /> : <Hitlist
+      {(Payee === "") ? <Hitlist
         Searchhits={Searchhits}
         setSearchhits={setSearchhits}
-      />}
+        setPayee={setPayee}
+        Payee={Payee}
+      /> : <Payeepage
+        Payee={Payee} />}
 
     </div>
   );
