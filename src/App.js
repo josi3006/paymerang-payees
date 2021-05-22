@@ -13,11 +13,27 @@ function App() {
   const [Searchword, setSearchword] = useState("");
 
 
+  // const setitup = (e) => {
+  //   e.preventDefault();
+  //   setSearchhits(jsondata)
+  //   console.log('jsondata: ', jsondata);
+  // }
+
   const setitup = (e) => {
     e.preventDefault();
-    setSearchhits(jsondata)
-    console.log('jsondata: ', jsondata);
+
+    console.log(jsondata);
+
+    const allhits = jsondata.filter((terms) => 
+      terms.Payee.Name === "BLEENDOT"
+    );
+
+    console.log(allhits);
+
   }
+
+
+
 
   const logssearch = (e) => {
     e.preventDefault();
