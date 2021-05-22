@@ -14,32 +14,24 @@ function App() {
 
 
 
-  const setitup = (e) => {
+  const Dosearch = (e) => {
     e.preventDefault();
-
     const allhits = jsondata.filter((terms) => {
-      return terms.Payee.Name.toLowerCase().includes(Searchword.toLowerCase())}
-    );
-
+      return terms.Payee.Name.toLowerCase().includes(Searchword.toLowerCase())
+    });
     setSearchhits(allhits);
     console.log(allhits);
-
   }
 
 
 
-
-  const logssearch = (e) => {
-    e.preventDefault();
-    console.log('Here is the Search Terms: ', Searchword)
-  }
 
   return (
 
     <div className="App">
 
       <Searchbar
-        setitup={setitup}
+        Dosearch={Dosearch}
         Searchword={Searchword}
         setSearchword={setSearchword} />
 
@@ -47,9 +39,6 @@ function App() {
         Searchhits={Searchhits}
         setSearchhits={setSearchhits}
       />}
-
-
-      <button onClick={logssearch}>This will log it??</button>
 
     </div>
   );

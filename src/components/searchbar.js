@@ -22,12 +22,11 @@ const Searchbar = (props) => {
                 name="searchterm"
                 onChange={handlechange}
                 type="text"
-                placeholder="Search Terms"
+                placeholder="Payee Name"
             />
 
 
-            <button onClick={props.setitup}>Set it</button>
-
+            <button onClick={props.Dosearch}>Search</button>
 
 
 

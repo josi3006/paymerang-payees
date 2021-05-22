@@ -8,9 +8,8 @@ const Hitlist = (props) => {
 
 
 
-    // Functionality to search json data
 
-   
+
 
     return (
 
@@ -28,13 +27,20 @@ const Hitlist = (props) => {
                 <div>
                     <ul>
                         {props.Searchhits.map((hititem) => {
+
+                            let PANarray = (hititem.Payment.PAN.toString()).split("");
+                            let lastfour = PANarray.slice(12,16).join('');
+                            let hiddenPAN = ("************" + lastfour);
+
                             return (
                                 <li key={toString(Date.now()) + hititem}>
                                     {hititem.Payee.Name}
+                                    {hiddenPAN}
+
+
                                 </li>)
                         })
                         }
-
                     </ul>
 
 
