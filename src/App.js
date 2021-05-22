@@ -21,6 +21,7 @@ function App() {
       return terms.Payee.Name.toLowerCase().includes(Searchword.toLowerCase())}
     );
 
+    setSearchhits(allhits);
     console.log(allhits);
 
   }
