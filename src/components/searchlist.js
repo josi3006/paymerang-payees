@@ -47,7 +47,7 @@ const Hitlist = (props) => {
 
                                 <div className="row" key={toString(Date.now()) + hititem}>
 
-                                    <div className="col linky" onClick={(e) => choosePayee(e, hititem.Payee.name)}>
+                                    <div className="col linky" onClick={(e) => choosePayee(e, hititem.Payee)}>
                                         {hititem.Payee.Name}
                                     </div>
 
