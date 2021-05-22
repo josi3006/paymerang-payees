@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import jsondata from "../jsondata.json";
+import React from "react";
+// import jsondata from "../jsondata.json";
 
 
 

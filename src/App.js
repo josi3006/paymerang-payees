@@ -13,19 +13,14 @@ function App() {
   const [Searchword, setSearchword] = useState("");
 
 
-  // const setitup = (e) => {
-  //   e.preventDefault();
-  //   setSearchhits(jsondata)
-  //   console.log('jsondata: ', jsondata);
-  // }
 
   const setitup = (e) => {
     e.preventDefault();
 
     console.log(jsondata);
 
-    const allhits = jsondata.filter((terms) => 
-      terms.Payee.Name === "BLEENDOT"
+    const allhits = jsondata.filter((terms) => {
+      return terms.Payee.Name.toLowerCase() === Searchword.toLowerCase()}
     );
 
     console.log(allhits);
