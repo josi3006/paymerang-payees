@@ -17,10 +17,8 @@ function App() {
   const setitup = (e) => {
     e.preventDefault();
 
-    console.log(jsondata);
-
     const allhits = jsondata.filter((terms) => {
-      return terms.Payee.Name.toLowerCase() === Searchword.toLowerCase()}
+      return terms.Payee.Name.toLowerCase().includes(Searchword.toLowerCase())}
     );
 
     console.log(allhits);
