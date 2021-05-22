@@ -36,6 +36,7 @@ const Hitlist = (props) => {
                                 <li key={toString(Date.now()) + hititem}>
                                     {hititem.Payee.Name}
                                     {hiddenPAN}
+                                    {hititem.Payee.SubmissionDate}
 
 
                                 </li>)
