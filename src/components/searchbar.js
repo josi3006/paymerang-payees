@@ -11,6 +11,11 @@ const Searchbar = (props) => {
         props.setSearchword(value);
     }
 
+    const reset = (e) => {
+        e.preventDefault();
+        window.location.reload();
+    }
+
 
     return (
 
@@ -27,6 +32,8 @@ const Searchbar = (props) => {
 
 
             <button onClick={props.Dosearch}>Search</button>
+
+            <button onClick={(e) => reset(e)}>RESET</button>
 
 
 
