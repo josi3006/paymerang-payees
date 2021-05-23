@@ -8,7 +8,7 @@ import jsondata from "./jsondata.json";
 function App() {
 
 
-  const [Payee, setPayee] = useState("");
+  const [DataItem, setDataItem] = useState("");
   const [Searchhits, setSearchhits] = useState([]);
   const [Searchword, setSearchword] = useState("");
 
@@ -34,13 +34,13 @@ function App() {
         Searchword={Searchword}
         setSearchword={setSearchword} />
 
-      {(Payee === "") ? <Hitlist
+      {(DataItem === "") ? <Hitlist
         Searchhits={Searchhits}
         setSearchhits={setSearchhits}
-        setPayee={setPayee}
-        Payee={Payee}
+        setDataItem={setDataItem}
+        DataItem={DataItem}
       /> : <Payeepage
-        Payee={Payee} />}
+        DataItem={DataItem} />}
 
     </div>
   );

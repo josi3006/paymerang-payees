@@ -12,9 +12,9 @@ const Hitlist = (props) => {
 
 
 
-    const choosePayee = (e, chosenOne) => {
+    const chooseDataItem = (e, chosenOne) => {
         e.preventDefault();
-        props.setPayee(chosenOne);
+        props.setDataItem(chosenOne);
     }
 
 
@@ -56,7 +56,7 @@ const Hitlist = (props) => {
 
                                 <div className="col-sm-1"></div>
 
-                                <div className="col-sm-1 text-left linky" onClick={(e) => choosePayee(e, hititem.Payee)}>
+                                <div className="col-sm-1 text-left linky" onClick={(e) => chooseDataItem(e, hititem)}>
                                     {hititem.Payee.Name}
                                 </div>
 

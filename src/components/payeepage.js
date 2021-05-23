@@ -7,15 +7,16 @@ const Payeepage = (props) => {
 
 
 
-    const msg = "I'm the Payee Page!";
 
-    const data = [props.Payee];
+    const data = props.DataItem;
 
     return (
 
         <div>
 
-            <h1>{msg}</h1>
+
+
+            <h1>Payee Page!</h1>
 
             <div className="row" id="big-main-row">
                 <div className="col" id="left-col-with-arrow">
@@ -28,38 +29,65 @@ const Payeepage = (props) => {
 
 
                     <div className="row" id="payee-basic-info">
-                        <div className="col" id="payee-main-info"></div>
+                        <div className="col" id="payee-main-info">
+                            {data.Payee.Name}<br />
+                        Attn: {data.Payee.Attention}<br />
+                        Payment: {data.Payment.PAN}
+                        </div>
 
-                        <div className="col" id="payee-address"></div>
+                        <div className="col" id="payee-address">
+                            Phone: {data.Payee.Phone}<br />
+                            FAX: {data.Payee.Fax}<br /><br />
+                            {data.Payee.Address.Address1}<br />
+                            {data.Payee.Address.City},
+                            {data.Payee.Address.StateOrProvince}
+                            {data.Payee.Address.PostalCode}<br />
+                            {data.Payee.Address.Country}
+                        </div>
                     </div>
 
-                    <div className="row" className="remittance-row">
-                        
-                    </div>
-
-                  
 
 
+                    {data.Remittance.map((remitItem) => {
 
+                        return (
 
+                            <div className="row mt-1 remittance-row" key={remitItem.InvoiceNo}>
 
-                    {/* PAGE CONTENT ENDS HERE */}
+                                <div className="col-sm-auto">
+                                    {remitItem.PayorName}{remitItem.PayorId}<br />
+                                    {remitItem.InvoiceNo}<br />
+                                    {remitItem.Amount}
+                                </div>
+
+                                <div className="col text-left">
+                                    {remitItem.Description}
+                                </div>
+
+                            </div>
+
+                        )
+                    })
+                    }
 
                 </div>
 
-                <div className="col" id="right-col-with-arrow">
-                    {/* PLACE RIGHT ARROW HERE */}
-                </div>
+                {/* PAGE CONTENT ENDS HERE */}
 
             </div>
 
 
+            
 
-            <h1>{data.Name}</h1>
-            <p>{data.Address.Address1}</p>
+            <div className="col" id="right-col-with-arrow">
+                {/* PLACE RIGHT ARROW HERE */}
+            </div>
+
+        </div>
 
 
-        </div >
+
+
 
 
     );
