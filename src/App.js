@@ -40,7 +40,8 @@ function App() {
         setDataItem={setDataItem}
         DataItem={DataItem}
       /> : <Payeepage
-        DataItem={DataItem} />}
+        DataItem={DataItem}
+        setDataItem={setDataItem} />}
 
     </div>
   );

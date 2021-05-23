@@ -1,4 +1,5 @@
 import React from "react";
+import jsondata from "../jsondata.json";
 
 
 
@@ -15,7 +16,25 @@ const Payeepage = (props) => {
     let PANarray = (data.Payment.PAN.toString()).split("");
     let lastfour = PANarray.slice(12, 16).join('');
     let hiddenPAN = ("************" + lastfour);
-    
+
+
+    const nextItem = (e) => {
+        e.preventDefault();
+        let currItem = jsondata.indexOf(props.DataItem);
+        let nextIndex = currItem + 1;
+        if (nextIndex < jsondata.length) 
+        props.setDataItem(jsondata[nextIndex]);
+        
+    }
+
+    const previousItem = (e) => {
+        e.preventDefault();
+        let currItem = jsondata.indexOf(props.DataItem);
+        let previousIndex = currItem - 1;
+        if (previousIndex >= 0) 
+        props.setDataItem(jsondata[previousIndex]);
+    }
+
 
 
     return (
@@ -27,8 +46,10 @@ const Payeepage = (props) => {
             <h1>Payee Page!</h1>
 
             <div className="row" id="big-main-row">
-                <div className="col-1" id="left-col-with-arrow">
+                <div className="col-2" id="left-col-with-arrow">
                     {/* PLACE LEFT ARROW HERE */}
+                    <button onClick={(e) => previousItem(e)}>previous</button>
+
                 </div>
 
                 <div className="col auto" id="main-middle-col">
@@ -36,7 +57,7 @@ const Payeepage = (props) => {
                     {/* PAGE CONTENT STARTS HERE */}
 
 
-                   
+
 
 
 
@@ -87,8 +108,10 @@ const Payeepage = (props) => {
                 {/* PAGE CONTENT ENDS HERE */}
 
 
-                <div className="col-1" id="right-col-with-arrow">
+                <div className="col-2" id="right-col-with-arrow">
                     {/* PLACE RIGHT ARROW HERE */}
+
+                    <button onClick={(e) => nextItem(e)}>next</button>
                 </div>
 
 
