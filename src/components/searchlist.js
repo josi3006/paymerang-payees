@@ -1,7 +1,6 @@
 import React from "react";
 import "../style.css";
-// import jsondata from "../jsondata.json";
-
+import PaymerangIcon from "../images/paymerangicon.png";
 
 
 
@@ -25,8 +24,9 @@ const Hitlist = (props) => {
             { (props.Searchhits.length === 0) ?
 
                 <div className="centerblock">
-                    <h1>Welcome to the Paymerang payment search page</h1>
-                    <p>Please use the search bar at the top to search all payments</p>
+                    <img src={PaymerangIcon} alt="Paymerang Icon" /><br /><br /><br />
+                    <h1>Welcome to the payment search page!</h1><br />
+                    <p>Please use the search bar at the top to search Payees</p>
                 </div>
 
                 :
