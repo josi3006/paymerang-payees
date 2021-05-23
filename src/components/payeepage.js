@@ -26,7 +26,8 @@ const Payeepage = (props) => {
         <button onClick={showme}>Show Me</button>
 
     <h1>{data.Name}</h1>
-    <p>{props.Payee.Address.Address1}</p>
+    <p>{data.Address.Address1}</p>
+    
 
         </div>
 

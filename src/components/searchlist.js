@@ -35,8 +35,7 @@ const Hitlist = (props) => {
 
                 
 
-                    <ul>
-                        <li>Payee Payment Submission Date</li>
+                    <h4>Payee Payment Submission Date</h4>
                         {props.Searchhits.map((hititem) => {
 
                             let PANarray = (hititem.Payment.PAN.toString()).split("");
@@ -47,16 +46,18 @@ const Hitlist = (props) => {
 
                                 <div className="row" key={toString(Date.now()) + hititem}>
 
-                                    <div className="col linky" onClick={(e) => choosePayee(e, hititem.Payee)}>
+                                    <div className="col-sm-1"></div>
+
+                                    <div className="col-sm-1 text-left linky" onClick={(e) => choosePayee(e, hititem.Payee)}>
                                         {hititem.Payee.Name}
                                     </div>
 
-                                    <div className="col">
+                                    <div className="col-sm-auto text-left">
                                         {hiddenPAN}
                                     </div>
 
 
-                                    <div className="col">
+                                    <div className="col-sm-auto text-left">
                                         {hititem.Payee.SubmissionDate}
                                     </div>
 
@@ -68,7 +69,6 @@ const Hitlist = (props) => {
                             )
                         })
                         }
-                    </ul>
 
 
 
