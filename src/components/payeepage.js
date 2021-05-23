@@ -10,6 +10,14 @@ const Payeepage = (props) => {
 
     const data = props.DataItem;
 
+
+
+    let PANarray = (data.Payment.PAN.toString()).split("");
+    let lastfour = PANarray.slice(12, 16).join('');
+    let hiddenPAN = ("************" + lastfour);
+    
+
+
     return (
 
         <div>
@@ -19,34 +27,38 @@ const Payeepage = (props) => {
             <h1>Payee Page!</h1>
 
             <div className="row" id="big-main-row">
-                <div className="col" id="left-col-with-arrow">
+                <div className="col-1" id="left-col-with-arrow">
                     {/* PLACE LEFT ARROW HERE */}
                 </div>
 
-                <div className="col" id="main-middle-col">
+                <div className="col auto" id="main-middle-col">
 
                     {/* PAGE CONTENT STARTS HERE */}
 
 
-                    <div className="row" id="payee-basic-info">
-                        <div className="col" id="payee-main-info">
-                            {data.Payee.Name}<br />
+                   
+
+
+
+
+
+                    <div className="row mb-5" id="payee-basic-info">
+                        <div className="col text-left" id="payee-main-info">
+                            <h4>{data.Payee.Name}</h4>
                         Attn: {data.Payee.Attention}<br />
-                        Payment: {data.Payment.PAN}
+                        Payment: {hiddenPAN}
                         </div>
 
-                        <div className="col" id="payee-address">
-                            Phone: {data.Payee.Phone}<br />
-                            FAX: {data.Payee.Fax}<br /><br />
-                            {data.Payee.Address.Address1}<br />
-                            {data.Payee.Address.City},
-                            {data.Payee.Address.StateOrProvince}
-                            {data.Payee.Address.PostalCode}<br />
-                            {data.Payee.Address.Country}
+                        <div className="col addy-info text-right" id="payee-address">
+                            <div>Phone: {data.Payee.Phone}</div>
+                            <div>FAX: {data.Payee.Fax}</div>
+                            <div>{data.Payee.Address.Address1}</div>
+                            <span>{data.Payee.Address.City}, </span>
+                            <span>{data.Payee.Address.StateOrProvince} </span>
+                            <span>{data.Payee.Address.PostalCode}</span>
+                            <div>{data.Payee.Address.Country}</div>
                         </div>
                     </div>
-
-
 
                     {data.Remittance.map((remitItem) => {
 
@@ -54,14 +66,14 @@ const Payeepage = (props) => {
 
                             <div className="row mt-1 remittance-row" key={remitItem.InvoiceNo}>
 
-                                <div className="col-sm-auto">
-                                    {remitItem.PayorName}{remitItem.PayorId}<br />
-                                    {remitItem.InvoiceNo}<br />
-                                    {remitItem.Amount}
+                                <div className="col-sm-3 text-left">
+                                    <span>{remitItem.PayorName} &#40;ID# {remitItem.PayorId}&#41;</span>
+                                    <div>Invoice: {remitItem.InvoiceNo}</div>
+                                    <div>Amount: {remitItem.Amount}</div>
                                 </div>
 
-                                <div className="col text-left">
-                                    {remitItem.Description}
+                                <div className="col auto text-left">
+                                    <div className="text-wrap">Description: {remitItem.Description}</div>
                                 </div>
 
                             </div>
@@ -74,14 +86,18 @@ const Payeepage = (props) => {
 
                 {/* PAGE CONTENT ENDS HERE */}
 
+
+                <div className="col-1" id="right-col-with-arrow">
+                    {/* PLACE RIGHT ARROW HERE */}
+                </div>
+
+
             </div>
 
 
-            
 
-            <div className="col" id="right-col-with-arrow">
-                {/* PLACE RIGHT ARROW HERE */}
-            </div>
+
+
 
         </div>
 

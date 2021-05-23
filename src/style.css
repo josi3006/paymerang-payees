@@ -7,3 +7,16 @@
     font-size: 1.25em;
     text-decoration-line: underline;
 }
+
+.red {
+    background-color: red;
+}
+
+.addy-info {
+    font-size: .75em;
+}
+
+.remittance-row {
+    margin: 2em 0 2em 0;
+    border-top: 2px solid; 
+}
