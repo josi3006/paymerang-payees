@@ -46,7 +46,7 @@ const Payeepage = (props) => {
             <h1>Payee Page!</h1>
 
             <div className="row" id="big-main-row">
-                <div className="col-2" id="left-col-with-arrow">
+                <div className="col-2 my-auto" id="left-col-with-arrow">
                     {/* PLACE LEFT ARROW HERE */}
                     <button onClick={(e) => previousItem(e)}>previous</button>
 
@@ -108,7 +108,7 @@ const Payeepage = (props) => {
                 {/* PAGE CONTENT ENDS HERE */}
 
 
-                <div className="col-2" id="right-col-with-arrow">
+                <div className="col-2 my-auto" id="right-col-with-arrow">
                     {/* PLACE RIGHT ARROW HERE */}
 
                     <button onClick={(e) => nextItem(e)}>next</button>
