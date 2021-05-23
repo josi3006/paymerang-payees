@@ -2,3 +2,8 @@
     color: #2355df;
     cursor: pointer;
 }
+
+.header {
+    font-size: 1.25em;
+    text-decoration-line: underline;
+}
