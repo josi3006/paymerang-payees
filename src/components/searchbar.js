@@ -36,7 +36,7 @@ const Searchbar = (props) => {
                     />
 
 
-                    <button className="buttonstyle mr-1" onClick={(e) => search(e)} type="reset">Search</button>
+                    <button className="buttonstyle mr-1" onClick={(e) => search(e)} type="submit">Search</button>
 
                     <button className="buttonstyle" onClick={(e) => reset(e)}>RESET</button>
 

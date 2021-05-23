@@ -7,11 +7,13 @@ import arrow from "../images/arrow.png";
 
 const Payeepage = (props) => {
 
-
-
-
     const data = props.DataItem;
 
+    var gettime = new Date();
+    var timenow = (gettime.getMonth() + 1) + '/' +
+        gettime.getDate() + '/' +
+        gettime.getFullYear() + ' - ' +
+        gettime.getHours() + ":" + gettime.getMinutes();
 
 
     let PANarray = (data.Payment.PAN.toString()).split("");
@@ -40,16 +42,17 @@ const Payeepage = (props) => {
 
     return (
 
-        <div>
+        <div className="mt-4">
 
 
 
-            <h1>Payee Page!</h1>
+            <span className="mt-4"><h1>Payee Remittance Report</h1><div className="smallertext">Generated {timenow}</div></span>
 
             <div className="row" id="big-main-row">
                 <div className="col-2 my-auto" id="left-col-with-arrow">
                     {/* PLACE LEFT ARROW HERE */}
-                    <img src={arrow} className="previcon" onClick={(e) => previousItem(e)} alt="Previous Item" />
+                    <img src={arrow} className="previcon" onClick={(e) => previousItem(e)} alt="Previous Item" /><br />
+                    <span className="smallertext">previous Payee</span>
 
                 </div>
 
@@ -64,14 +67,15 @@ const Payeepage = (props) => {
 
 
 
-                    <div className="row mb-5" id="payee-basic-info">
+                    <div className="row my-5" id="payee-basic-info">
                         <div className="col text-left" id="payee-main-info">
                             <h4>{data.Payee.Name}</h4>
-                        Attn: {data.Payee.Attention}<br />
-                        Payment: {hiddenPAN}
+                        <div>Attn: {data.Payee.Attention}</div>
+                        <div>Payment: {hiddenPAN}</div>
+                        <div>Submission Date: {data.Payee.SubmissionDate}</div>
                         </div>
 
-                        <div className="col addy-info text-right" id="payee-address">
+                        <div className="col smallertext text-right" id="payee-address">
                             <div>Phone: {data.Payee.Phone}</div>
                             <div>FAX: {data.Payee.Fax}</div>
                             <div>{data.Payee.Address.Address1}</div>
@@ -92,6 +96,7 @@ const Payeepage = (props) => {
                                     <span>{remitItem.PayorName} &#40;ID# {remitItem.PayorId}&#41;</span>
                                     <div>Invoice: {remitItem.InvoiceNo}</div>
                                     <div>Amount: {remitItem.Amount}</div>
+                                    
                                 </div>
 
                                 <div className="col auto text-left">
@@ -112,7 +117,9 @@ const Payeepage = (props) => {
                 <div className="col-2 my-auto" id="right-col-with-arrow">
                     {/* PLACE RIGHT ARROW HERE */}
 
-                    <img src={arrow} className="nexticon" onClick={(e) => nextItem(e)} alt="Next Item" />                </div>
+                    <img src={arrow} className="nexticon" onClick={(e) => nextItem(e)} alt="Next Item" /><br />
+                    <span className="smallertext">next Payee</span>
+                </div>
 
 
             </div>

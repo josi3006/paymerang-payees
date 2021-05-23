@@ -41,6 +41,10 @@
     font-size: 1.25em;
 }
 
+.smallertext {
+    font-size: .75em;
+}
+
 .linky {
     color: #2355df;
     cursor: pointer;
@@ -51,10 +55,6 @@
     text-decoration-line: underline;
 }
 
-
-.addy-info {
-    font-size: .75em;
-}
 
 .remittance-row {
     margin: 2em 0 2em 0;
