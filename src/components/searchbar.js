@@ -19,10 +19,11 @@ const Searchbar = (props) => {
 
     return (
 
-        <div>
+        <div id="searchbardiv">
 
 
             <input
+                className="inputbox ml-4 mr-1"
                 value={props.Searchword}
                 name="searchterm"
                 onChange={handlechange}
@@ -31,9 +32,9 @@ const Searchbar = (props) => {
             />
 
 
-            <button onClick={props.Dosearch}>Search</button>
+            <button className="buttonstyle mr-1" onClick={props.Dosearch}>Search</button>
 
-            <button onClick={(e) => reset(e)}>RESET</button>
+            <button className="buttonstyle" onClick={(e) => reset(e)}>RESET</button>
 
 
 
