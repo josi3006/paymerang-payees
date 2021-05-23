@@ -18,5 +18,17 @@
 
 .remittance-row {
     margin: 2em 0 2em 0;
-    border-top: 2px solid; 
+    border-top: 2px solid;
+}
+
+.nexticon {
+    width: 5em;
+    cursor: pointer;
+}
+
+.previcon {
+    width: 5em;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    cursor: pointer;
 }

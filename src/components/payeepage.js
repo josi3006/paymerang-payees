@@ -23,17 +23,17 @@ const Payeepage = (props) => {
         e.preventDefault();
         let currItem = jsondata.indexOf(props.DataItem);
         let nextIndex = currItem + 1;
-        if (nextIndex < jsondata.length) 
-        props.setDataItem(jsondata[nextIndex]);
-        
+        if (nextIndex < jsondata.length)
+            props.setDataItem(jsondata[nextIndex]);
+
     }
 
     const previousItem = (e) => {
         e.preventDefault();
         let currItem = jsondata.indexOf(props.DataItem);
         let previousIndex = currItem - 1;
-        if (previousIndex >= 0) 
-        props.setDataItem(jsondata[previousIndex]);
+        if (previousIndex >= 0)
+            props.setDataItem(jsondata[previousIndex]);
     }
 
 
@@ -49,8 +49,7 @@ const Payeepage = (props) => {
             <div className="row" id="big-main-row">
                 <div className="col-2 my-auto" id="left-col-with-arrow">
                     {/* PLACE LEFT ARROW HERE */}
-                    <button onClick={(e) => previousItem(e)}>previous</button>
-                    <img src={arrow} />
+                    <img src={arrow} className="previcon" onClick={(e) => previousItem(e)} alt="Previous Item" />
 
                 </div>
 
@@ -113,8 +112,7 @@ const Payeepage = (props) => {
                 <div className="col-2 my-auto" id="right-col-with-arrow">
                     {/* PLACE RIGHT ARROW HERE */}
 
-                    <button onClick={(e) => nextItem(e)}>next</button>
-                </div>
+                    <img src={arrow} className="nexticon" onClick={(e) => nextItem(e)} alt="Next Item" />                </div>
 
 
             </div>
