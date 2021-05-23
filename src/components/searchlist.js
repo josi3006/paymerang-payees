@@ -24,7 +24,7 @@ const Hitlist = (props) => {
 
             { (props.Searchhits.length === 0) ?
 
-                <div>
+                <div className="centerblock">
                     <h1>Welcome to the Paymerang payment search page</h1>
                     <p>Please use the search bar at the top to search all payments</p>
                 </div>
