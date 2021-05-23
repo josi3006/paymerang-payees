@@ -37,6 +37,10 @@
     height: auto;
 }
 
+.largertext {
+    font-size: 1.25em;
+}
+
 .linky {
     color: #2355df;
     cursor: pointer;
@@ -47,9 +51,6 @@
     text-decoration-line: underline;
 }
 
-.red {
-    background-color: red;
-}
 
 .addy-info {
     font-size: .75em;

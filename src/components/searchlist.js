@@ -33,6 +33,17 @@ const Hitlist = (props) => {
 
                 <div>
 
+
+                    <div className="row mt-3 mb-2">
+                        <div className="col-sm-1"></div>
+                        <div className="col-sm-auto text-left largertext">These Payees match your search criteria.</div>
+                    </div>
+                    
+                    <div className="row mt-3 mb-2">
+                        <div className="col-sm-1"></div>
+                        <div className="col-sm-auto text-left mb-5">Click the Payee Name for a full report of payments.</div>
+                    </div>
+
                     <div className="row mt-3 mb-2">
                         <div className="col-sm-1"></div>
                         <div className="col-sm-1 text-left header">Payee</div>
