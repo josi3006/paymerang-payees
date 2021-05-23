@@ -1,5 +1,6 @@
 import React from "react";
 import jsondata from "../jsondata.json";
+import arrow from "../images/arrow.png";
 
 
 
@@ -49,6 +50,7 @@ const Payeepage = (props) => {
                 <div className="col-2 my-auto" id="left-col-with-arrow">
                     {/* PLACE LEFT ARROW HERE */}
                     <button onClick={(e) => previousItem(e)}>previous</button>
+                    <img src={arrow} />
 
                 </div>
 
