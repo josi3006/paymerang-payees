@@ -21,7 +21,7 @@ const Searchbar = (props) => {
 
     return (
 
-        <div id="searchbardiv">
+        <div id="searchbardiv" className="container-fluid">
 
             <form id="searchform">
                 <div className='form-group'>

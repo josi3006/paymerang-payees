@@ -19,7 +19,7 @@ const Hitlist = (props) => {
 
     return (
 
-        <div>
+        <div className="container-fluid">
 
             { (props.Searchhits.length === 0) ?
 
