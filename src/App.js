@@ -4,6 +4,7 @@ import Payeepage from './components/payeepage';
 import Searchbar from "./components/searchbar.js";
 import Hitlist from './components/searchlist';
 import jsondata from "./jsondata.json";
+import Modal from "./components/modal.js";
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
   const [DataItem, setDataItem] = useState("");
   const [Searchhits, setSearchhits] = useState([]);
   const [Searchword, setSearchword] = useState("");
+  const [Showmodal, setShowmodal] = useState(false);
 
 
 
@@ -20,6 +22,8 @@ function App() {
       return terms.Payee.Name.toLowerCase().includes(Searchword.toLowerCase())
     });
     setSearchhits(allhits);
+    console.log('allhits is: ', allhits)
+    if (allhits.length === 0) (setShowmodal(true));
   }
 
 
@@ -32,6 +36,8 @@ function App() {
         Searchword={Searchword}
         setSearchword={setSearchword} />
 
+        {Showmodal ? <Modal /> : null}
+
       {(DataItem === "") ? <Hitlist
         Searchhits={Searchhits}
         setSearchhits={setSearchhits}
@@ -40,6 +46,16 @@ function App() {
       /> : <Payeepage
         DataItem={DataItem}
         setDataItem={setDataItem} />}
+
+
+
+
+
+
+
+
+
+
 
     </div>
   );

@@ -72,3 +72,17 @@
     transform: scaleX(-1);
     cursor: pointer;
 }
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: hidden;
+}
+
+.modal-content, .close {
+    background-color: #497086;
+    color: white;
+
+}
