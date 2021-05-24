@@ -25,6 +25,7 @@ I chose React because of the interactive nature of the app's purpose, the speed 
 
 - In a real-world application, the data would be called from an API, rather than an included JSON file.
 
-# BIG ASTERISK
 
-* This application was created and deployed as an exercise, and is in no way affiliated with official Paymerang products.
+# BIG DISCLAIMER:
+
+THIS APPLICATION WAS CREATED AND DEPLOYED AS AN EXERCISE, AND IS IN NO WAY AFFILIATED WITH OFFICIAL PAYMERANG PRODUCTS.
