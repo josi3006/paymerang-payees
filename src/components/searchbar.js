@@ -1,7 +1,4 @@
 import React from "react";
-// import jsondata from "../jsondata.json";
-
-
 
 
 const Searchbar = (props) => {
