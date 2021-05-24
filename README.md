@@ -2,6 +2,8 @@
 
 ## This is NOT an official product of Paymerang
 
+## Please note this app is not designed for mobile use
+
 by John Granville Sims
 github: josi3006
 
@@ -24,6 +26,8 @@ I chose React because of the interactive nature of the app's purpose, the speed 
 - I'd like to render the dates in a more readable, pleasing format.
 
 - In a real-world application, the data would be called from an API, rather than an included JSON file.
+
+- With some modification, this app could be deployed for mobile use.  It is currently geared for desktop use.
 
 
 # BIG DISCLAIMER:
